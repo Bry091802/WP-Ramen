@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-montserrat  overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .header__logo img {
+    @apply w-[5rem];
+  }
+  .header__wrapper {
+    @apply uppercase;
+  }
+  .header__nav {
+    @apply flex items-center justify-center gap-[22rem] lg:gap-[32.5rem] font-bold;
+  }
+  .navigation {
+    @apply lg:flex lg:gap-[2rem] lg:items-center hidden lg:block;
+  }
+  .btn {
+    @apply font-extrabold;
+  }
+  .header__content {
+    @apply text-center flex justify-center flex-col  font-bold items-center pt-16;
+  }
+  .content__image {
+    @apply mt-[4rem];
+  }
+
+
+  /* BUTTON */
+  .btn {
+    @apply py-2 px-4 bg-transparent border-transparent rounded-xl;
+  }
+  .btn.order {
+    @apply bg-primary text-white hover:bg-white hover:text-primary;
+  }
+  .btn.menu {
+    @apply bg-dark rounded-lg pt-3 w-[20rem] hover:bg-white hover:text-dark;
+  }
+
+  /* DRINKS */
+  .drinks__text.active h3 {
+    @apply border-b-4 border-primary text-primary;
+  }
+  .drinks__beer {
+    @apply hidden;
+  }
+  .drinks__beer.active {
+    @apply inline-block  lg:grid lg:grid-cols-2 gap-[8rem];
+  }
+
+  /* TOGGLE */
+  .navigation.open {
+    @apply right-0 z-50 overflow-y-hidden;
+  }
+  .transparent {
+    @apply hidden;
+  }
+  .transparent.open {
+    @apply block fixed top-[0] right-0 h-screen w-[100%]
+ duration-700 overflow-y-hidden;
+  }
+  .toggle__menu {
+    @apply flex flex-col gap-1 z-50 lg:hidden md:hidden;
+  }
+  .toggle__menu span {
+    @apply content-[*] bg-primary w-12 h-2 rounded-lg duration-700 ease-in-out;
+  }
+  .toggle__menu.open span:first-child {
+    @apply w-12 rotate-[45deg] translate-y-4 -mt-8;
+  }
+
+  .toggle__menu.open span:nth-child(2) {
+    @apply hidden;
+  }
+  .toggle__menu.open span:last-child {
+    @apply w-12 translate-y-1 rotate-[-45deg];
+  }
+}
